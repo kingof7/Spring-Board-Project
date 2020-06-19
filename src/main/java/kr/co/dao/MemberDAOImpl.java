@@ -28,6 +28,7 @@ public class MemberDAOImpl implements MemberDAO {
 	public void memberUpdate(MemberVO vo) throws Exception {
 		// vo에 담긴 파라미터들은 memberMapper.xml에 memberMapper라는 namespace에
 		// 아이디가 memberUpdate인 쿼리에 파라미터들을 넣어줍니다.
+		// namespace.id
 		sql.update("memberMapper.memberUpdate", vo);
 	
 	}
@@ -44,6 +45,12 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public int passChk(MemberVO vo) throws Exception {
 		int result = sql.selectOne("memberMapper.passChk", vo);
+		return result;
+	}
+
+	@Override
+	public int idChk(MemberVO vo) throws Exception {
+		int result = sql.selectOne("memberMapper.idChk", vo);
 		return result;
 	}
 }
