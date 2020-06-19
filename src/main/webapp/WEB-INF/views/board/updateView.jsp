@@ -84,8 +84,8 @@
 					</tbody>
 				</table>
 				<div>
-					<button type="submit" class="update_btn">저장</button>
-					<button type="submit" class="cancel_btn">취소</button>
+					<button type="button" class="update_btn">저장</button>
+					<button type="button" class="cancel_btn">취소</button>
 				</div>
 			</form>
 		</section>

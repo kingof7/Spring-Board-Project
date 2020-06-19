@@ -11,5 +11,18 @@
     	 FROM MP_REPLY
     	WHERE BNO = #{bno}
 	</select>
+<!-- 댓글 작성 -->	
+<insert id="writeReply">
+		INSERT INTO MP_REPLY(
+			BNO
+			, RNO
+			, CONTENT
+			, WRITER
+		)
+		VALUES(    #{bno}
+			, MP_REPLY_SEQ.NEXTVAL
+			, #{content}
+			, #{writer}	)
+</insert>
 
 </mapper>
