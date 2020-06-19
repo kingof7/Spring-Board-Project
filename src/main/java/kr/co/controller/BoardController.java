@@ -1,5 +1,7 @@
 package kr.co.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -12,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.co.service.BoardService;
+import kr.co.service.ReplyService;
 import kr.co.vo.BoardVO;
 import kr.co.vo.PageMaker;
+import kr.co.vo.ReplyVO;
 import kr.co.vo.SearchCriteria;
 
 @Controller
@@ -24,6 +28,9 @@ public class BoardController {
 
 	@Inject
 	BoardService service;
+	
+	@Inject
+	ReplyService replyService;
 
 	// 게시판 글 작성 화면
 	@RequestMapping(value = "/board/writeView", method = RequestMethod.GET) // board뒤에 붙는 url
@@ -59,7 +66,7 @@ public class BoardController {
 
 	}
 
-	// 게시글 조회
+	// 게시글, 댓글 조회
 	@RequestMapping(value = "/readView", method = RequestMethod.GET)
 	public String read(BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception {
 		logger.info("read");
@@ -67,7 +74,11 @@ public class BoardController {
 		model.addAttribute("read", service.read(boardVO.getBno()));
 		model.addAttribute("scri", scri);
 		// 데이터가 담겨있는 객체
-
+		
+		//댓글은 게시글의 bno에 종속되어있기에 ReplyController 따로 안만듬
+		List<ReplyVO> replyList = replyService.readReply(boardVO.getBno());
+		model.addAttribute("replyList", replyList);
+				
 		return "board/readView";
 	}
 
