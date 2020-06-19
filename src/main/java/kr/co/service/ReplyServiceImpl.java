@@ -25,6 +25,24 @@ public class ReplyServiceImpl implements ReplyService{
 		dao.writdReply(vo);
 		
 	}
+
+	@Override
+	public void updateReply(ReplyVO vo) throws Exception {
+		dao.updateReply(vo);
+		
+	}
+
+	@Override
+	public void deleteReply(ReplyVO vo) throws Exception {
+		dao.deleteReply(vo);
+		
+	}
+
+	@Override
+	public ReplyVO selectReply(int rno) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectReply(rno);
+	}
 	
 	
 }

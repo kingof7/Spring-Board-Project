@@ -43,6 +43,26 @@
 			  formObj.attr("action", "/board/replyWrite");
 			  formObj.submit();
 			});
+			
+			//댓글 수정 View
+				$(".replyUpdateBtn").on("click", function(){
+					location.href = "/board/replyUpdateView?bno=${read.bno}"
+									+ "&page=${scri.page}"
+									+ "&perPageNum=${scri.perPageNum}"
+									+ "&searchType=${scri.searchType}"
+									+ "&keyword=${scri.keyword}"
+									+ "&rno="+$(this).attr("data-rno");
+				});
+					
+			//댓글 삭제 View
+				$(".replyDeleteBtn").on("click", function(){
+					location.href = "/board/replyDeleteView?bno=${read.bno}"
+						+ "&page=${scri.page}"
+						+ "&perPageNum=${scri.perPageNum}"
+						+ "&searchType=${scri.searchType}"
+						+ "&keyword=${scri.keyword}"
+						+ "&rno="+$(this).attr("data-rno");
+				});
 		})
 			
 	</script>
@@ -110,6 +130,10 @@
 				        </p>
 				
 				        <p>${replyList.content}</p>
+				        <div>
+							 <button type="button" class="replyUpdateBtn" data-rno="${replyList.rno}">수정</button>
+							 <button type="button" class="replyDeleteBtn" data-rno="${replyList.rno}">삭제</button>
+						 </div>
 				      </li>
 				    </c:forEach>   
 				  </ol>
@@ -130,6 +154,7 @@
 				  <div>
 				 	 <button type="button" class="replyWriteBtn">작성</button>
 				  </div>
+				 
 				</form>
 			</section>
 			<hr />

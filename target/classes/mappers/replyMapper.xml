@@ -24,5 +24,28 @@
 			, #{content}
 			, #{writer}	)
 </insert>
+<!-- 댓글 수정 -->
+	<update id="updateReply" parameterType="kr.co.vo.ReplyVO">
+		UPDATE MP_REPLY SET CONTENT = #{content}
+		WHERE RNO = #{rno}
+	</update>
+
+<!-- 댓글 삭제 -->
+	<delete id="deleteReply" parameterType="kr.co.vo.ReplyVO">
+		DELETE FROM MP_REPLY
+		WHERE RNO = #{rno}
+	</delete>
+	
+<!-- 선택된 댓글 조회 -->
+	<select id="selectReply" resultType="kr.co.vo.ReplyVO">
+		SELECT
+				BNO
+			  , RNO
+			  , CONTENT
+			  , WRITER
+			  , REGDATE
+		  FROM MP_REPLY
+		 WHERE RNO = #{rno}
+	</select>
 
 </mapper>
