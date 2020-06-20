@@ -210,7 +210,16 @@
 			<version>1.2.2</version>
 		</dependency>
 
-		<!-- 첨부파일 END -->
+		<!-- 첨부파일 END -->		
+		
+		<!-- 트랜젝션 START -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>3.1.1.RELEASE</version>
+		</dependency>
+		<!-- 트랜젝션 END -->
 
 	</dependencies>
 	<build>

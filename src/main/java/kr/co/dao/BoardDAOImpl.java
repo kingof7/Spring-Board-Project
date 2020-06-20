@@ -84,5 +84,11 @@ public class BoardDAOImpl implements BoardDAO {
 		
 		sqlSession.update("boardMapper.updateFile", map);
 	}
+	// 게시판 조회수
+	@Override
+	public void boardHit(int bno) throws Exception {
+		// TODO Auto-generated method stub
+		sqlSession.update("boardMapper.boardHit", bno);
+	}
 
 }
