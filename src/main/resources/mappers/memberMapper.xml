@@ -38,6 +38,15 @@
 		 <!--  AND USERPASS = #{userPass} --> 
 	</delete>
 	
+	<!-- 회원조회 -->
+	<select id="memberList" resultType="kr.co.vo.MemberVO">
+		SELECT USERID as userId
+			   , USERNAME as userName
+			   , REGDATE as regDate
+		FROM MP_MEMBER
+		ORDER BY regDate	
+	</select>
+	
 	<!-- 패스워드 체크 -->
 	<select id="passChk" resultType="int">
 		SELECT COUNT(*) FROM MP_MEMBER

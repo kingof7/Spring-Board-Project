@@ -4,6 +4,7 @@
 	li {list-style: none; display:inline; padding: 6px;}
 </style>
 <ul>
+	<li><a href="/">메인으로</a></li>
 	<li><a href="/board/list">목록</a></li>
 	<li><a href="/board/writeView">글 작성</a></li>
 	<li>
@@ -12,7 +13,7 @@
 	</li>
 	<li>
 		<c:if test="${member != null}">
-			<p>${member.userId}님 안녕하세요.</p>
+			<label>${member.userId}님 안녕하세요.</label>
 		</c:if>
 	</li>
 </ul>

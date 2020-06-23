@@ -1,23 +1,29 @@
 package kr.co.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kr.co.service.MemberService;
 import kr.co.vo.MemberVO;
+import kr.co.vo.SearchCriteria;
 
 @Controller
 @RequestMapping("/member/*")
 public class MemberController {
 
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+	
 
 	@Inject
 	MemberService service;
@@ -64,6 +70,7 @@ public class MemberController {
 		boolean pwdMatch = pwdEncoder.matches(vo.getUserPass(), login.getUserPass());
 
 		if (login != null && pwdMatch == true) {
+			
 			session.setAttribute("member", login);
 		} else {
 			session.setAttribute("member", null);
@@ -109,6 +116,14 @@ public class MemberController {
 	public String memberDeleteView() throws Exception {
 		return "member/memberDeleteView";
 	}
+	
+	// 회원 조회
+	@RequestMapping(value = "/list.do")
+	public String memberList(Model model) throws Exception{		
+		List<MemberVO> list = service.memberList();	
+		model.addAttribute("list", list);
+		return "member/memberView";		
+	}
 
 	// 회원 탈퇴 post
 	@RequestMapping(value = "/memberDelete", method = RequestMethod.POST)
@@ -118,7 +133,9 @@ public class MemberController {
 		session.invalidate();
 
 		return "redirect:/";
-	}
+	}	
+	
+	
 
 	// 패스워드 체크
 	@ResponseBody

@@ -1,16 +1,21 @@
 package kr.co.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import kr.co.dao.MemberDAO;
+import kr.co.dao.MemberDAOImpl;
 import kr.co.vo.MemberVO;
 
 @Service
 public class MemberServiceImpl implements MemberService {
 	
-	@Inject MemberDAO dao;
+	@Inject MemberDAO dao;	
 	
 	@Override
 	public void register(MemberVO vo) throws Exception {
@@ -50,5 +55,14 @@ public class MemberServiceImpl implements MemberService {
 		int result = dao.idChk(vo);
 		return result;
 	}
+
+	@Override
+	public List<MemberVO> memberList() throws Exception {
+		
+		return dao.memberList();
+	}
+
+	
+
 	
 }

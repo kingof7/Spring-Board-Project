@@ -1,5 +1,7 @@
 package kr.co.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -53,4 +55,14 @@ public class MemberDAOImpl implements MemberDAO {
 		int result = sql.selectOne("memberMapper.idChk", vo);
 		return result;
 	}
+
+	//회원 조회
+	@Override
+	public List<MemberVO> memberList() throws Exception {
+		//		xml파일의			네임스페이스.아이디
+		return sql.selectList("memberMapper.memberList");
+	}
+	
+
+	
 }

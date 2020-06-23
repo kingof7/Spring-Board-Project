@@ -1,5 +1,7 @@
 package kr.co.service;
 
+import java.util.List;
+
 import kr.co.vo.MemberVO;
 
 public interface MemberService {
@@ -10,6 +12,8 @@ public interface MemberService {
 	public void memberUpdate(MemberVO vo) throws Exception;
 	
 	public void memberDelete(MemberVO vo) throws Exception;
+	
+	public List<MemberVO> memberList() throws Exception;
 	
 	public int passChk(MemberVO vo) throws Exception;
 	
