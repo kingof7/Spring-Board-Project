@@ -103,7 +103,9 @@
 						<li style="padding-right: 20px; float: right;">|</li>
 						<li style="padding-right: 20px; float: right; text-decoration: none;"><a href="#" id="logoutBtn">로그아웃</a></li>
 						<li style="padding-right: 20px; float: right;">|</li>
-						<li style="padding-right: 20px; float: right; text-decoration: none;"><a>${member.userId}님 환영합니다.</a></li>					
+						<li style="padding-right: 20px; float: right; text-decoration: none;"><a>${member.userId}님 환영합니다.</a></li>	
+						<li style="padding-right: 20px; float: right;">|</li>
+						<li style="padding-right: 20px; float: right; text-decoration: none;"><a href="/study/createView">스터디개설</a></li>				
 					</ul>
 				</c:if>
 				</div>

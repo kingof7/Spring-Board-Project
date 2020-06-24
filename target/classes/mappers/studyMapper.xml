@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="studyMapper">
+<!-- 스터디 개설 -->	
+<insert id="create">
+	<selectKey keyProperty="sno" order="BEFORE" resultType="int">
+		select coalesce(max(sno+1),1) as sno from study
+	</selectKey>
+insert into study (sno, id, sname, title, content, mname, location, totime, fromtime)
+		values 
+		(#{sno}, #{id}, #{sname}, #{title}, #{content}, #{mname}, #{location}, #{totime}, #{fromtime})
+</insert>
+
+
+</mapper>
