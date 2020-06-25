@@ -5,11 +5,8 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Transactional;
 
 import kr.co.dao.MemberDAO;
-import kr.co.dao.MemberDAOImpl;
 import kr.co.vo.MemberVO;
 
 @Service

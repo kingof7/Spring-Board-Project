@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.co.service.StudyService;
+import kr.co.vo.StudyMemberVO;
 import kr.co.vo.StudyVO;
 
 @Controller
@@ -18,7 +19,7 @@ public class StudyController {
 	private static final Logger logger = LoggerFactory.getLogger(StudyController.class);
 
 	@Inject
-	StudyService service;
+	StudyService service;		
 	
 	@RequestMapping(value = "/createView", method = RequestMethod.GET)
 	public void createView() throws Exception {
@@ -27,10 +28,12 @@ public class StudyController {
 
 	//스터디 개설
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public String create(StudyVO studyVO) throws Exception {
+	public String create(StudyVO studyVO, StudyMemberVO vo) throws Exception {
 		logger.info("create");
 		System.out.println(studyVO.toString());
-		service.create(studyVO);
+		
+		service.create(studyVO, vo);
+		System.out.println(vo.toString());
 		
 		return "home";
 	}

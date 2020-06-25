@@ -12,7 +12,8 @@ public class StudyVO {
 	private String location;
 	private Date totime;
 	private Date fromtime;
-	private Date sdate;
+	
+	
 	public int getSno() {
 		return sno;
 	}
@@ -67,19 +68,12 @@ public class StudyVO {
 	public void setFromtime(Date fromtime) {
 		this.fromtime = fromtime;
 	}
-	public Date getSdate() {
-		return sdate;
-	}
-	public void setSdate(Date sdate) {
-		this.sdate = sdate;
-	}
+	
 	@Override
 	public String toString() {
 		return "StudyVO [sno=" + sno + ", id=" + id + ", sname=" + sname + ", title=" + title + ", content=" + content
-				+ ", mname=" + mname + ", location=" + location + ", totime=" + totime + ", fromtime=" + fromtime
-				+ ", sdate=" + sdate + "]";
+				+ ", mname=" + mname + ", location=" + location + ", totime=" + totime + ", fromtime=" + fromtime + "]";
 	}
-	
 	
 	
 	

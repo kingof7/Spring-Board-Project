@@ -8,10 +8,19 @@
 	<selectKey keyProperty="sno" order="BEFORE" resultType="int">
 		select coalesce(max(sno+1),1) as sno from study
 	</selectKey>
-insert into study (sno, id, sname, title, content, mname, location, totime, fromtime)
+	insert into study (sno, id, sname, title, content, mname, location, totime, fromtime)
 		values 
 		(#{sno}, #{id}, #{sname}, #{title}, #{content}, #{mname}, #{location}, #{totime}, #{fromtime})
 </insert>
 
+<!-- 스터디장 멤버로 추가 -->
+<insert id="master">
+	<selectKey keyProperty="sno" order="BEFORE" resultType="int">
+		select coalesce(max(sno+1),1) as sno from studymember
+	</selectKey>
+	insert into studymember (sno, name, id, gdate)
+	values
+	(#{sno}, #{name}, #{id}, sysdate)
+</insert>
 
 </mapper>
