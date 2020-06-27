@@ -2,7 +2,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" pageEncoding="UTF-8"
 	contentType="text/html; charset=UTF-8"%>
-
 <html>
 <head>
 <title>스터디 게시판에 오신 걸 환영합니다.</title>
@@ -14,8 +13,8 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
-	<!-- css는 resources파일안에 -->
-<link rel="stylesheet" href="/resources/index.css"/>
+<!-- css는 resources파일안에 -->
+<link rel="stylesheet" href="/resources/index.css" />
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <!-- 부가적인 테마 -->
 <link rel="stylesheet"
@@ -23,7 +22,8 @@
 
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+	
+<title>스터디 목록</title>
 </head>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -92,67 +92,63 @@
 							</div>
 						</div>
 					</div>
-				<c:if test="${msg == false}">
-					<c:if test="${member == null}">
-						<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요.</p>
+					<c:if test="${msg == false}">
+						<c:if test="${member == null}">
+							<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요.</p>
+						</c:if>
 					</c:if>
-				</c:if>				
-				<c:if test="${member != null}">
-					<ul style="line-height: 2.8; list-style-type: none; margin: 0px;">						
-						<li style="padding-right: 10px; float: right; text-decoration: none;"><a href="/member/memberUpdateView" id="memberUpdateBtn" >회원정보수정</a></li>
-						<li style="padding-right: 20px; float: right;">|</li>
-						<li style="padding-right: 20px; float: right; text-decoration: none;"><a href="#" id="logoutBtn">로그아웃</a></li>
-						<li style="padding-right: 20px; float: right;">|</li>
-						<li style="padding-right: 20px; float: right; text-decoration: none;"><a>${member.userId}님 환영합니다.</a></li>	
-						<li style="padding-right: 20px; float: right;">|</li>
-						<li style="padding-right: 20px; float: right; text-decoration: none;"><a href="/study/createView">스터디개설</a></li>				
-					</ul>
-				</c:if>
+					<c:if test="${member != null}">
+						<ul style="line-height: 2.8; list-style-type: none; margin: 0px;">
+							<li
+								style="padding-right: 10px; float: right; text-decoration: none;"><a
+								href="/member/memberUpdateView" id="memberUpdateBtn">회원정보수정</a></li>
+							<li style="padding-right: 20px; float: right;">|</li>
+							<li
+								style="padding-right: 20px; float: right; text-decoration: none;"><a
+								href="#" id="logoutBtn">로그아웃</a></li>
+							<li style="padding-right: 20px; float: right;">|</li>
+							<li
+								style="padding-right: 20px; float: right; text-decoration: none;"><a>${member.userId}님
+									환영합니다.</a></li>
+						</ul>
+					</c:if>
 				</div>
 			</ul>
 		</div>
 		<section>
 			<div id="content">
-				<img
-					src="https://search.pstatic.net/common/?src=http%3A%2F%2Fldb.phinf.naver.net%2F20190719_42%2F1563527498327ep72X_JPEG%2FXRE0BVqaCxDVC-5dIzVSi2vk.jpg&type=b400" />
-				<div class="real">
-					<div
-						style="padding: 10px; background-color: #fecc84; text-align: center;">실시간
-						Best 게시글</div>
-					<div
-						style="padding-top: 10px; padding-left: 10px; background-color: white; height: 100px;">
-						<img src="../img/rank1.png" style="width: 20px; height: 20px;" />
-						<span>(서울 신촌,강남)롯데 인적성 스터디 모집합니다!</span>
-					</div>
-				</div>
-				<div class="real">
-					<div
-						style="padding: 10px; background-color: #fecc84; text-align: center;">접속중
-						회원: 0명</div>
-					<div
-						style="padding-top: 10px; padding-left: 10px; background-color: white; height: 100px; overflow-y: scroll;">
+				<section id="container">
+					<form role="form" method="get">
+						<table style="" 1" width:700px;" class="table table-hover">
+							<thead>
+								<tr>
+									<th>스터디명</th>
+									<th>목적</th>
+									<th>내용</th>
+									<th>스터디장</th>
+									<th>스터디장 아이디</th>
+									<th>지역</th>
+									<th>시작일</th>
+									<th>종료일</th>
+								</tr>
+							</thead>
 
-					</div>
-				</div>
-				<div class="real">
-					<div
-						style="padding: 10px; background-color: #fecc84; text-align: center;">접속중
-						회원: 0명</div>
-					<div
-						style="padding-top: 10px; padding-left: 10px; background-color: white; height: 100px; overflow-y: scroll;">
-
-					</div>
-				</div>
-				<div class="real">
-					<div
-						style="padding: 10px; background-color: #fecc84; text-align: center;">접속중
-						회원: 0명</div>
-					<div
-						style="padding-top: 10px; padding-left: 10px; background-color: white; height: 100px; overflow-y: scroll;">
-
-					</div>
-				</div>
+							<c:forEach var="row" items="${list}">
+								<tr>
+									<td>${row.sname}</td>
+									<td>${row.title}</td>
+									<td>${row.content}</td>
+									<td>${row.mname}</td>
+									<td>${row.id}</td>
+									<td>${row.location}</td>
+									<td>${row.totime}</td>
+									<td>${row.fromtime}</td>									
+								</tr>
+							</c:forEach>
+						</table>
 			</div>
+		</section>
+		</div>
 		</section>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -167,6 +163,5 @@
 			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 			integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 			crossorigin="anonymous"></script>
-	
 </body>
 </html>

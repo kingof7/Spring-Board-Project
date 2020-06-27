@@ -3,7 +3,7 @@ package kr.co.vo;
 import java.util.Date;
 
 public class StudyVO {
-	private int sno;
+	private String sno;
 	private String id;
 	private String sname;
 	private String title;
@@ -14,10 +14,10 @@ public class StudyVO {
 	private Date fromtime;
 	
 	
-	public int getSno() {
+	public String getSno() {
 		return sno;
 	}
-	public void setSno(int sno) {
+	public void setSno(String sno) {
 		this.sno = sno;
 	}
 	public String getId() {

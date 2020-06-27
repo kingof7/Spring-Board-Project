@@ -1,10 +1,13 @@
 package kr.co.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,5 +40,14 @@ public class StudyController {
 		
 		return "home";
 	}
+	
+	//스터디 목록
+	@RequestMapping(value = "/list")
+	public String list(Model model) throws Exception{
+		List<StudyVO> list = service.list();
+		model.addAttribute("list", list);
+		return "study/studyView";
+	}
+	
 
 }

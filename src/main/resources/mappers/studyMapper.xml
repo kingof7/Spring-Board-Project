@@ -4,23 +4,24 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="studyMapper">
 <!-- 스터디 개설 -->	
-<insert id="create">
-	<selectKey keyProperty="sno" order="BEFORE" resultType="int">
-		select coalesce(max(sno+1),1) as sno from study
-	</selectKey>
+<insert id="create">	
 	insert into study (sno, id, sname, title, content, mname, location, totime, fromtime)
 		values 
 		(#{sno}, #{id}, #{sname}, #{title}, #{content}, #{mname}, #{location}, #{totime}, #{fromtime})
 </insert>
 
 <!-- 스터디장 멤버로 추가 -->
-<insert id="master">
-	<selectKey keyProperty="sno" order="BEFORE" resultType="int">
-		select coalesce(max(sno+1),1) as sno from studymember
-	</selectKey>
+<insert id="master">	
 	insert into studymember (sno, name, id, gdate)
 	values
 	(#{sno}, #{name}, #{id}, sysdate)
 </insert>
+
+<!-- 스터디 목록 조회 -->
+<select id="list" resultType="kr.co.vo.StudyVO">
+	select sname, title, content, mname, id, location, totime, fromtime
+	from study
+	order by sname
+</select>
 
 </mapper>

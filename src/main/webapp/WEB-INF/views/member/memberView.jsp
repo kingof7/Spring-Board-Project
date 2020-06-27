@@ -50,7 +50,7 @@
 				style="color: red;"><b>엠</b></span></a>
 
 			<ul>
-				<li style="margin-left: 20px;"><a href="#">공지사항</a></li>
+				<li style="margin-left: 20px;"><a href="/study/list">스터디목록</a></li>
 				<li><a href="/board/list">스터디게시판</a></li>
 				<li style="float: right; margin-right: 30px;"><a
 					href="/member/studymember">스터디원</a></li>

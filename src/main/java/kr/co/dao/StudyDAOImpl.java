@@ -1,5 +1,7 @@
 package kr.co.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -25,6 +27,14 @@ public class StudyDAOImpl implements StudyDAO{
 	@Override
 	public void insert(StudyMemberVO vo) throws Exception {
 		sqlSession.insert("studyMapper.master", vo);
+		
+	}
+	
+	//스터디 목록 조회
+	@Override
+	public List<StudyVO> list() throws Exception {
+		
+		return sqlSession.selectList("studyMapper.list");
 		
 	}
 }

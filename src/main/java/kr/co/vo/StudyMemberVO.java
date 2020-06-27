@@ -3,14 +3,14 @@ package kr.co.vo;
 import java.util.Date;
 
 public class StudyMemberVO {
-	private int sno;
+	private String sno;
 	private String name;
 	private String id;
 	private Date gdate;
-	public int getSno() {
+	public String getSno() {
 		return sno;
 	}
-	public void setSno(int sno) {
+	public void setSno(String sno) {
 		this.sno = sno;
 	}
 	public String getName() {
