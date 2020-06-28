@@ -131,9 +131,7 @@ public class MemberController {
 		session.invalidate();
 
 		return "redirect:/";
-	}	
-	
-	
+	}		
 
 	// 패스워드 체크
 	@ResponseBody

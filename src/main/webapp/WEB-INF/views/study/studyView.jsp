@@ -28,17 +28,17 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#logoutBtn").on("click", function() {
-			location.href = "member/logout";
+			location.href = "/member/logout";
 		})
 		$("#registerBtn").on("click", function() {
-			location.href = "member/register";
+			location.href = "/member/register";
 		})
 
 		$("#memberUpdateBtn").on("click", function() {
-			location.href = "member/memberUpdateView";
+			location.href = "/member/memberUpdateView";
 		})
 
-	})
+	})	
 </script>
 <body style="margin: 0px auto; width: 80%;">
 	<header>
@@ -118,7 +118,7 @@
 		<section>
 			<div id="content">
 				<section id="container">
-					<form role="form" method="get">
+					
 						<table style="" 1" width:700px;" class="table table-hover">
 							<thead>
 								<tr>
@@ -135,7 +135,7 @@
 
 							<c:forEach var="row" items="${list}">
 								<tr>
-									<td>${row.sname}</td>
+									<td><a href="/study/joinView?sno=${row.sno}">${row.sname}</a></td>																	
 									<td>${row.title}</td>
 									<td>${row.content}</td>
 									<td>${row.mname}</td>

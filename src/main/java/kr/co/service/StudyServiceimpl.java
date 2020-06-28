@@ -60,7 +60,19 @@ public class StudyServiceimpl implements StudyService{
 	public List<StudyVO> list() throws Exception {		
 		return dao.list();
 	}
-	
 
+	// 스터디 가입
+	@Override
+	public void join(StudyMemberVO vo) throws Exception {
+		dao.insert(vo);
+	}
+
+	// 스터디멤버 중복조회
+	@Override
+	public int idChk(StudyMemberVO vo) throws Exception {
+		int result = dao.idChk(vo);
+		return result;
+	}
+	
 
 }

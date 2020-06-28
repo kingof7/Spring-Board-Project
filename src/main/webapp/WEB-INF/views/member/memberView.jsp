@@ -28,14 +28,14 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#logoutBtn").on("click", function() {
-			location.href = "member/logout";
+			location.href = "/member/logout";
 		})
 		$("#registerBtn").on("click", function() {
-			location.href = "member/register";
+			location.href = "/member/register";
 		})
 
 		$("#memberUpdateBtn").on("click", function() {
-			location.href = "member/memberUpdateView";
+			location.href = "/member/memberUpdateView";
 		})
 
 	})

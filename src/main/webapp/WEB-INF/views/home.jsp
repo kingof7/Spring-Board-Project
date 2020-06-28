@@ -28,14 +28,14 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#logoutBtn").on("click", function() {
-			location.href = "member/logout";
+			location.href = "/member/logout";
 		})
 		$("#registerBtn").on("click", function() {
-			location.href = "member/register";
+			location.href = "/member/register";
 		})
 
 		$("#memberUpdateBtn").on("click", function() {
-			location.href = "member/memberUpdateView";
+			location.href = "/member/memberUpdateView";
 		})
 
 	})
@@ -96,6 +96,7 @@
 					<c:if test="${member == null}">
 						<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요.</p>
 					</c:if>
+					
 				</c:if>				
 				<c:if test="${member != null}">
 					<ul style="line-height: 2.8; list-style-type: none; margin: 0px;">						
@@ -106,13 +107,15 @@
 						<li style="padding-right: 20px; float: right; text-decoration: none;"><a>${member.userId}님 환영합니다.</a></li>	
 						<li style="padding-right: 20px; float: right;">|</li>
 						<li style="padding-right: 20px; float: right; text-decoration: none;"><a href="/study/createView">스터디개설</a></li>				
-					</ul>
+						<li style="color: red; padding-right: 20px; float: left; text-decoration: none;">${msg1}</li>
+						<li style="color: red; padding-right: 20px; float: left; text-decoration: none;">${msg2}</li>
+					</ul>															
 				</c:if>
 				</div>
 			</ul>
 		</div>
-		<section>
-			<div id="content">
+		<section>				
+			<div id="content">			
 				<img
 					src="https://search.pstatic.net/common/?src=http%3A%2F%2Fldb.phinf.naver.net%2F20190719_42%2F1563527498327ep72X_JPEG%2FXRE0BVqaCxDVC-5dIzVSi2vk.jpg&type=b400" />
 				<div class="real">

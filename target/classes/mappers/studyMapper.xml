@@ -10,7 +10,7 @@
 		(#{sno}, #{id}, #{sname}, #{title}, #{content}, #{mname}, #{location}, #{totime}, #{fromtime})
 </insert>
 
-<!-- 스터디장 멤버로 추가 -->
+<!-- 스터디장 멤버로 추가-->
 <insert id="master">	
 	insert into studymember (sno, name, id, gdate)
 	values
@@ -19,9 +19,17 @@
 
 <!-- 스터디 목록 조회 -->
 <select id="list" resultType="kr.co.vo.StudyVO">
-	select sname, title, content, mname, id, location, totime, fromtime
+	select sno, sname, title, content, mname, id, location, totime, fromtime
 	from study
 	order by sname
 </select>
+
+<!-- 스터디멤버 중복 조회 -->
+<select id="idChk" resultType="int">
+	select count(*) from studymember
+	where id = #{id}	
+</select>
+
+
 
 </mapper>

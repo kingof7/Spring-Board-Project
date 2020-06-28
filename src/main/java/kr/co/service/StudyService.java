@@ -12,6 +12,11 @@ public interface StudyService {
 	
 	// 스터디 조회
 	public List<StudyVO> list() throws Exception;
-
+	
+	// 스터디 가입
+	public void join(StudyMemberVO vo) throws Exception;
+	
+	// 스터디멤버 중복조회
+	public int idChk(StudyMemberVO vo) throws Exception;
 
 }
