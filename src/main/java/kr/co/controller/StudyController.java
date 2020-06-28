@@ -44,7 +44,7 @@ public class StudyController {
 		return "home";
 	}
 	
-	//스터디 목록
+	//스터디 목록 (+페이징처리)
 	@RequestMapping(value = "/list")
 	public String list(Model model) throws Exception{
 		List<StudyVO> list = service.list();
@@ -97,7 +97,17 @@ public class StudyController {
 			//return으로 넘어가면 모델에 저장된 sno가 같이 넘어감
 			return "home";
 		}
+	//스터디원 조회	(StudyMember 테이블 데이터 뿌리기 + 페이징 처리)
 		
+	//스터디 그룹 해체(스터디장만 가능) (
+	
+	//스터디원 추방(스터디장만 가능)
+		
+	//스터디그룹 탈퇴
+		
+	//포인트 부여(스터디장만 가능)
+		
+	//포인트 조회	
 		
 		
 	}
