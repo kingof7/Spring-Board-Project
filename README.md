@@ -18,37 +18,47 @@
 
 #### 1. 메인페이지
 
-![image-20200628180519700](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628180519700.png)
+<img src="https://k.kakaocdn.net/dn/ce1L1D/btqFaTIXroa/dlPZB7EbOXRHIHZ5ZjTmg0/img.png">
 
 #### 2. 회원가입
 
-![image-20200628180722775](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628180722775.png)
+<img src="https://k.kakaocdn.net/dn/dIc2Qm/btqFcOMYaWM/IU3qa7HFCkBXdD4l3aKWwK/img.png">
 
 ### 3. 로그인
 
-![image-20200628180750834](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628180750834.png)
+<img src="https://k.kakaocdn.net/dn/1myPC/btqFcuurZy6/p5O22XgfNBbINpRvayBfPk/img.png">
 
 
 
 ### 4. 회원조회
 
-![image-20200628180821505](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628180821505.png)
+<img src="https://k.kakaocdn.net/dn/bhCQIx/btqFbVy0Aqj/JJNQBZcaHUSw3wLcx8A8kk/img.png">
 
 
 
 ### 5. 게시판 이용(글 작성,수정,삭제, 댓글, 파일첨부, 게시물 조회)
 
-![image-20200628180903532](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628180903532.png)
+<img src="https://k.kakaocdn.net/dn/uViqa/btqFaOnu2we/e0iBWTFQ4K0UqF9vSWjvKK/img.png">
 
-![image-20200628180941419](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628180941419.png)
+<img src="https://k.kakaocdn.net/dn/QEBqp/btqFa6OQ6sZ/yCGAnDegxI960K24Il35v0/img.png">
 
-![image-20200628180956755](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628180956755.png)
+
+
+<img src="https://k.kakaocdn.net/dn/bAQcyd/btqFcuVwZah/EuVKtwejxenJlpfo21oJB1/img.png">
+
+
 
 #### 6. 스터디 개설
 
 -- 스터디 개설 시, 스터디장은 자동으로 스터디그룹의 구성원으로 DB에 INSERT됩니다.
 
-![image-20200628181127970](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628181127970.png)
+<img src="https://k.kakaocdn.net/dn/Po5CU/btqFbjAk99A/IRf2rbXzLTksDjSemXpKik/img.png">
+
+<img src="https://k.kakaocdn.net/dn/bTQSA4/btqFbB1R4Zi/BUVgpZc4H05X1dJzHsTE1k/img.png">
+
+<img src="https://k.kakaocdn.net/dn/cPyppw/btqFct3mQ04/Uzu2QJxJF6LKQQQsGG02b1/img.png">
+
+
 
 #### 7. 스터디 가입(성공, 실패)
 
@@ -58,11 +68,13 @@
 
 -- 스터디 가입 성공 또는 실패합니다.
 
-![image-20200628181224792](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628181224792.png)
+<img src="https://k.kakaocdn.net/dn/bnEIRO/btqFdmQdYXg/Hd2TvvxvhP358UTpx9Nks1/img.png">
+
+<img src="https://k.kakaocdn.net/dn/bBFqm9/btqFbjNVJDx/Kb0ek2ELdyLd3PQqtkCub0/img.png">
 
 
 
-![image-20200628181324920](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628181324920.png)
 
-![image-20200628181417496](C:\Users\LJH\AppData\Roaming\Typora\typora-user-images\image-20200628181417496.png)
+
+
 
