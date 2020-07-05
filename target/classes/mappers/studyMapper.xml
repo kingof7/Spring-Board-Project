@@ -21,13 +21,21 @@
 <select id="list" resultType="kr.co.vo.StudyVO">
 	select sno, sname, title, content, mname, id, location, totime, fromtime
 	from study
-	order by sname
+	order by totime
 </select>
 
 <!-- 스터디멤버 중복 조회 -->
 <select id="idChk" resultType="int">
 	select count(*) from studymember
 	where id = #{id}	
+</select>
+
+<!-- 나의 스터디 목록 -->
+<select id="myStudy" resultType="Map">
+	select study.sno, sname, title, content, mname, location, name, gdate
+	from studymember, study
+	where studymember.sno = study.sno 
+	and studymember.id = #{id}
 </select>
 
 

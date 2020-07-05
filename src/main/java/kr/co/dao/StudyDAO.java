@@ -1,6 +1,7 @@
 package kr.co.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.co.vo.MemberVO;
 import kr.co.vo.StudyMemberVO;
@@ -22,4 +23,7 @@ public interface StudyDAO {
 	
 	// 스터디멤버 중복조회
 	public int idChk(StudyMemberVO vo) throws Exception;
+	
+	// 나의 스터디 조회
+	public List<Map<String,Object>> myStudy(String id) throws Exception; 
 }

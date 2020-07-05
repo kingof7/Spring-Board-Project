@@ -22,7 +22,7 @@
 
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
+
 <title>스터디 목록</title>
 </head>
 <script type="text/javascript">
@@ -38,7 +38,7 @@
 			location.href = "/member/memberUpdateView";
 		})
 
-	})	
+	})
 </script>
 <body style="margin: 0px auto; width: 80%;">
 	<header>
@@ -53,7 +53,8 @@
 				<li style="margin-left: 20px;"><a href="/study/list">스터디목록</a></li>
 				<li><a href="/board/list">스터디게시판</a></li>
 				<li><a href="/study/myStudy">나의 스터디</a></li>
-				<li style="float: right; margin-right: 30px;"><a href="/member/list.do">회원조회</a></li>
+				<li style="float: right; margin-right: 30px;"><a
+					href="/member/list.do">회원조회</a></li>
 				<li style="float: right;">|</li>
 				<li style="float: right;"><a href="/member/register">회원가입</a></li>
 				<li style="float: right;">|</li>
@@ -127,26 +128,25 @@
 									<th>목적</th>
 									<th>내용</th>
 									<th>스터디장</th>
-									<th>스터디장 아이디</th>
 									<th>지역</th>
-									<th>시작일</th>
-									<th>종료일</th>
+									<th>이름</th>
+									<th>가입일</th>						
 								</tr>
 							</thead>
 
-							<c:forEach var="row" items="${list}">
+							<c:forEach var="row" items="${myStudy}">
 								<tr>
-									<td><a href="/study/joinView?sno=${row.sno}">${row.sname}</a></td>																	
-									<td>${row.title}</td>
-									<td>${row.content}</td>
-									<td>${row.mname}</td>
-									<td>${row.id}</td>
-									<td>${row.location}</td>
-									<td>${row.totime}</td>
-									<td>${row.fromtime}</td>									
+									<td>${row.SNAME}</td>																	
+									<td>${row.TITLE}</td>
+									<td>${row.CONTENT}</td>
+									<td>${row.MNAME}</td>
+									<td>${row.LOCATION}</td>
+									<td>${row.NAME}</td>
+									<td>${row.GDATE}</td>																	
 								</tr>
 							</c:forEach>
 						</table>
+					
 			</div>
 		</section>
 		</div>

@@ -1,6 +1,7 @@
 package kr.co.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import javax.inject.Inject;
@@ -74,5 +75,11 @@ public class StudyServiceimpl implements StudyService{
 		return result;
 	}
 	
-
+	// 스터디멤버 조회
+	@Override
+	public List<Map<String,Object>> myStudy(String id) throws Exception {
+		
+		return dao.myStudy(id);
+	}
+	
 }

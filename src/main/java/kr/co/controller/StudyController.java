@@ -1,6 +1,7 @@
 package kr.co.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -97,20 +98,44 @@ public class StudyController {
 			//return으로 넘어가면 모델에 저장된 sno가 같이 넘어감
 			return "home";
 		}
-	//스터디원 조회	(StudyMember 테이블 데이터 뿌리기 + 페이징 처리)
+				
+	}
+	
+	//나의 스터디 조회
+	@RequestMapping(value = "/myStudy")
+	public String myStudy(HttpSession session, StudyVO svo, StudyMemberVO vo, Model model) throws Exception{		
 		
+		if(session.getAttribute("member") == null)
+			return "home";
+		else {
+			MemberVO membervo = (MemberVO) session.getAttribute("member");
+			String id = membervo.getUserId();
+		//서비스가 dao랑 연결되어있으니, DB에 매핑이 됨		
+				
+			List<Map<String,Object>> myStudy = service.myStudy(id);		
+			
+			logger.info(myStudy.toString());
+			
+			model.addAttribute("myStudy", myStudy);
+		}
+			
+			
+		
+		
+		return "study/myStudy";
+	}
+	
+	//스터디원 조회	(StudyMember 테이블 데이터 뿌리기 + 페이징 처리)
+	
 	//스터디 그룹 해체(스터디장만 가능) (
 	
 	//스터디원 추방(스터디장만 가능)
-		
+	
 	//스터디그룹 탈퇴
-		
+	
 	//포인트 부여(스터디장만 가능)
-		
+	
 	//포인트 조회	
-		
-		
-	}
 	
 	
 }

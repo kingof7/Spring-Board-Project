@@ -1,6 +1,7 @@
 package kr.co.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -51,6 +52,13 @@ public class StudyDAOImpl implements StudyDAO {
 	public int idChk(StudyMemberVO vo) throws Exception {
 		int result = sqlSession.selectOne("studyMapper.idChk", vo);
 		return result;
+	}
+	
+	// 나의 스터디 목록
+	@Override
+	public List<Map<String,Object>> myStudy(String id) throws Exception {
+		
+		return sqlSession.selectList("studyMapper.myStudy", id);
 	}
 
 	

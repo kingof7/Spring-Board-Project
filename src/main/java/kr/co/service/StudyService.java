@@ -1,6 +1,7 @@
 package kr.co.service;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.co.vo.StudyMemberVO;
 import kr.co.vo.StudyVO;
@@ -18,5 +19,8 @@ public interface StudyService {
 	
 	// 스터디멤버 중복조회
 	public int idChk(StudyMemberVO vo) throws Exception;
+	
+	// 나의 스터디 목록조회
+	public List<Map<String, Object>> myStudy(String id) throws Exception;
 
 }
