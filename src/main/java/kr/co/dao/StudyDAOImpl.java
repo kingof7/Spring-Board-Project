@@ -61,5 +61,13 @@ public class StudyDAOImpl implements StudyDAO {
 		return sqlSession.selectList("studyMapper.myStudy", id);
 	}
 
+	// 스터디 탈퇴
+	@Override
+	public void withdraw(StudyMemberVO vo) throws Exception {
+		
+		sqlSession.delete("studyMapper.withdraw", vo);
+		
+	}
+
 	
 }

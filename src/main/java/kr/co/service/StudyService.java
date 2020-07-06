@@ -22,5 +22,8 @@ public interface StudyService {
 	
 	// 나의 스터디 목록조회
 	public List<Map<String, Object>> myStudy(String id) throws Exception;
+	
+	// 스터디 탈퇴
+	public void withdraw(StudyMemberVO vo) throws Exception; 
 
 }

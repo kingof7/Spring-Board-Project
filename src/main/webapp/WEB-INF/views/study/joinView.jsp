@@ -42,17 +42,27 @@ function fn_idChk(){
 <body>
 <h1>가입 코드를 입력하세요</h1>
 <h1><a href="/">홈으로</a></h1>
-<form action="/study/join" method="get">
+<form action="/study/join" method="get" style="display: block; float: left; margin-right: 5px;}">
 	<c:if test="${member.userId != null}">	
 		<input type="text" name="userSno" title="가입코드 입력란"/>		
 		<input type="hidden" onclick="fn_idChk()" name="sno" value="${sno}"/>		
 		<input type="submit" value="가입"/>
 	</c:if>
 	
+	
 	<c:if test="${member.userId == null}">
 		로그인 후 가입하세요.
 	</c:if>
 </form>
+
+<form action="/study/withdraw" method="get">
+	<c:if test="${member.userId != null}">
+		<input type="submit" value="탈퇴"/>
+		<input type="hidden" name="sno" value="${sno}"/>
+	</c:if>
+</form>
+
+
 
 
 </body>

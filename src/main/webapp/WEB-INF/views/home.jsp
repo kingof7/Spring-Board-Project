@@ -109,6 +109,7 @@
 						<li style="padding-right: 20px; float: right; text-decoration: none;"><a href="/study/createView">스터디개설</a></li>				
 						<li style="color: red; padding-right: 20px; float: left; text-decoration: none;">${msg1}</li>
 						<li style="color: red; padding-right: 20px; float: left; text-decoration: none;">${msg2}</li>
+						<li style="color: red; padding-right: 20px; float: left; text-decoration: none;">${msg3}</li>
 					</ul>															
 				</c:if>
 				</div>

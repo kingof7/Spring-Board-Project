@@ -136,7 +136,7 @@
 
 							<c:forEach var="row" items="${myStudy}">
 								<tr>
-									<td>${row.SNAME}</td>																	
+									<td><a href="/study/joinView?sno=${row.SNO}">${row.SNAME}</a></td>																	
 									<td>${row.TITLE}</td>
 									<td>${row.CONTENT}</td>
 									<td>${row.MNAME}</td>

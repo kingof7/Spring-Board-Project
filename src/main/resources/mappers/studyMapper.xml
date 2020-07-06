@@ -38,6 +38,16 @@
 	and studymember.id = #{id}
 </select>
 
+<!-- 스터디 탈퇴 -->
+<delete id="withdraw">
+	delete from studymember
+	where id = #{id}
+	and sno = #{sno}
+</delete>
 
-
+<!-- 스터디 해체 -->
+<delete id="delStudy">
+	delete from study
+	where sno = #{sno}
+</delete>
 </mapper>

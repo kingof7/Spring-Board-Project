@@ -82,4 +82,11 @@ public class StudyServiceimpl implements StudyService{
 		return dao.myStudy(id);
 	}
 	
+	// 스터디 탈퇴
+	@Override
+	public void withdraw(StudyMemberVO vo) throws Exception {
+		
+		dao.withdraw(vo);	
+	}
+	
 }

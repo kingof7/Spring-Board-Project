@@ -25,5 +25,8 @@ public interface StudyDAO {
 	public int idChk(StudyMemberVO vo) throws Exception;
 	
 	// 나의 스터디 조회
-	public List<Map<String,Object>> myStudy(String id) throws Exception; 
+	public List<Map<String,Object>> myStudy(String id) throws Exception;
+	
+	// 스터디 탈퇴
+	public void withdraw(StudyMemberVO vo) throws Exception;
 }
